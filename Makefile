@@ -14,7 +14,7 @@ phpunit-gen:
 		php ./vendor/bin/phpunit --generate-configuration
 
 test-coverage-text-report:
-		XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-clover build/logs/clover.xml
+		XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-clover ./build/logs/clover.xml
 
 test-coverage-html-report:
 		XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-html ./test-reports/html
