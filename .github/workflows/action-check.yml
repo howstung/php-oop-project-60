@@ -24,10 +24,13 @@ jobs:
       - name: Run linter
         run: make lint
 
+      - name: Run tests
+        run: make test
+
       - name: Publish test code coverage to CodeClimate
-        uses: paambaati/codeclimate-action@v5.0.0
+        uses: paambaati/codeclimate-action@v8.0.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
           XDEBUG_MODE: coverage
         with:
           coverageCommand: make test-coverage-text-report
