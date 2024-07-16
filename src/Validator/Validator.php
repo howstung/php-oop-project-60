@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Hexlet\Validator;
 
+use Hexlet\Validator\String\StringValidator;
+
 class Validator
 {
-    public static function test(): bool
+    public function string(): ValidatorInterface
     {
-        return true;
+        return new StringValidator();
     }
 }
