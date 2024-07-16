@@ -3,3 +3,5 @@
 
 /vendor/
 /test-reports
+
+/.phpunit.cache
