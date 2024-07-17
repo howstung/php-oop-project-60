@@ -8,7 +8,7 @@ use Hexlet\Validator\ValidatorInterface;
 use PHPUnit\Framework\TestCase;
 use Hexlet\Validator\Validator;
 
-class ValidatorStringsTest extends TestCase
+class StringValidatorTest extends TestCase
 {
     private Validator $validator;
     private ValidatorInterface $schema;
