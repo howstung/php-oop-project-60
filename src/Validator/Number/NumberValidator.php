@@ -35,7 +35,7 @@ class NumberValidator implements NumberValidatorInterface
 
     public function isValid(mixed $value): bool
     {
-        echo "- number isValid($value)\n";
+        echo "- number isValid(" . json_encode($value) . ")\n";
 
         $innerValid = $this->isValidCommon($value);
 
