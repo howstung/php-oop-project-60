@@ -33,6 +33,8 @@ class ArrayValidator implements ArrayValidatorInterface
 
     public function isValid(mixed $value): bool
     {
+        echo "- array isValid(" . json_encode($value) . ")\n";
+
         $innerValid = $this->isValidCommon($value);
         return $innerValid && (is_array($value) || is_null($value));
     }

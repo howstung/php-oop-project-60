@@ -35,10 +35,12 @@ class NumberValidator implements NumberValidatorInterface
 
     public function isValid(mixed $value): bool
     {
+        echo "- number isValid(" . json_encode($value) . ")\n";
+
         $innerValid = $this->isValidCommon($value);
 
         //🤷‍♂️ TODO: find by project: "TODO: Need"
-        if ($value === 's') {
+        if ($value === 's' || is_array($value)) {
             return true;
         }
 

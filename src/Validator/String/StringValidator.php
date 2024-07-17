@@ -35,6 +35,8 @@ class StringValidator implements StringValidatorInterface
 
     public function isValid(mixed $value = null): bool
     {
+        echo "- string isValid(" . json_encode($value) . ")\n";
+
         $innerValid = $this->isValidCommon($value);
 
         return $innerValid && (is_string($value) || is_null($value));
