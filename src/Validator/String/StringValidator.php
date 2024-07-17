@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Hexlet\Validator\String;
 
+use Hexlet\Validator\Rules\AddValidatorTrait;
 use Hexlet\Validator\RuleTrait;
 use Hexlet\Validator\String\Rules\StringContains;
 use Hexlet\Validator\String\Rules\StringMinLength;
@@ -12,6 +13,7 @@ use Hexlet\Validator\String\Rules\StringRequired;
 class StringValidator implements StringValidatorInterface
 {
     use RuleTrait;
+    use AddValidatorTrait;
 
     public function required(): self
     {

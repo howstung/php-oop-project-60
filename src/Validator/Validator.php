@@ -10,18 +10,36 @@ use Hexlet\Validator\String\StringValidator;
 
 class Validator
 {
+    private array $customValidators = [];
+
+    private function getValidatorsByType(string $type)
+    {
+        return array_key_exists($type, $this->customValidators) ? $this->customValidators[$type] : [];
+    }
+
     public function string(): ValidatorInterface
     {
-        return new StringValidator();
+        $validator = new StringValidator();
+        $validator->setCustomValidators($this->getValidatorsByType('string'));
+
+        return $validator;
     }
 
     public function number(): ValidatorInterface
     {
-        return new NumberValidator();
+        $validator = new NumberValidator();
+        $validator->setCustomValidators($this->getValidatorsByType('number'));
+
+        return $validator;
     }
 
     public function array(): ValidatorInterface
     {
         return new ArrayValidator();
+    }
+
+    public function addValidator(string $type, string $name, callable $callback): void
+    {
+        $this->customValidators[$type][$name] = $callback;
     }
 }

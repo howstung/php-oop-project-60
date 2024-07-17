@@ -7,11 +7,13 @@ namespace Hexlet\Validator\Number;
 use Hexlet\Validator\Number\Rules\NumberPositive;
 use Hexlet\Validator\Number\Rules\NumberRange;
 use Hexlet\Validator\Number\Rules\NumberRequired;
+use Hexlet\Validator\Rules\AddValidatorTrait;
 use Hexlet\Validator\RuleTrait;
 
 class NumberValidator implements NumberValidatorInterface
 {
     use RuleTrait;
+    use AddValidatorTrait;
 
     public function required(): self
     {
