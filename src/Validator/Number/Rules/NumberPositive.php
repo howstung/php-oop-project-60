@@ -10,6 +10,6 @@ class NumberPositive extends AbstractRuleInterface
 {
     public function isValid(mixed $value): bool
     {
-        return $value >= 0;
+        return is_null($value) || $value > 0;
     }
 }

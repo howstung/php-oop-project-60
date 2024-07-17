@@ -15,7 +15,11 @@
         }
     ],
     "scripts": {
-        "test": "phpunit tests"
+        "lint": "composer exec --verbose phpcs -- --standard=PSR12 src tests",
+        "lint-fix": "composer exec --verbose phpcbf -- --standard=PSR12 src tests",
+        "test": "phpunit tests",
+        "phpstan": "phpstan analyse src",
+        "coverage-html": "composer exec --verbose phpunit tests -- --coverage-html ./test-reports/html"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.10",

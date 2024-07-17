@@ -12,7 +12,7 @@ class Validator
 {
     private array $customValidators = [];
 
-    private function getValidatorsByType(string $type)
+    private function getValidatorsByType(string $type): array
     {
         return array_key_exists($type, $this->customValidators) ? $this->customValidators[$type] : [];
     }
