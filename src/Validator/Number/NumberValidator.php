@@ -37,6 +37,6 @@ class NumberValidator implements NumberValidatorInterface
     {
         $innerValid = $this->isValidCommon($value);
 
-        return $innerValid && (is_numeric($value) || is_null($value));
+        return $innerValid && ((new NumberRequired())->isValid($value) || is_null($value));
     }
 }

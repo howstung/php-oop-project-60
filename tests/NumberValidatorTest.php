@@ -32,7 +32,11 @@ class NumberValidatorTest extends TestCase
         $schema = $this->schema;
 
         $this->assertTrue($schema->isValid(null));
+        $this->assertTrue($schema->isValid(0));
         $this->assertTrue($schema->isValid(10));
+        $this->assertFalse($schema->isValid('s'));
+        $this->assertFalse($schema->isValid('42'));
+        $this->assertFalse($schema->isValid('42ddd'));
     }
 
     public function testRequired()

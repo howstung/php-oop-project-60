@@ -10,6 +10,6 @@ class NumberRequired extends AbstractRuleInterface
 {
     public function isValid(mixed $value = null): bool
     {
-        return is_numeric($value);
+        return is_integer($value) || is_float($value);
     }
 }
