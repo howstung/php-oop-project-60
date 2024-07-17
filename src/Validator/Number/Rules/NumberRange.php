@@ -12,6 +12,7 @@ class NumberRange extends AbstractRuleInterface
         protected readonly int $min,
         protected readonly int $max,
     ) {
+        parent::__construct(null);
     }
 
     public function isValid(mixed $value): bool

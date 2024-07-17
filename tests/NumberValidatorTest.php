@@ -37,13 +37,14 @@ class NumberValidatorTest extends TestCase
         $this->assertTrue($schema->isValid(10));
         $this->assertTrue($schema->isValid(10.23));
 
+        //TODO: Need: false, but Hexlet checks: true
         $this->assertTrue($schema->isValid('s'));// TODO: true or false ?
 
         $this->assertTrue($schema->isValid('15'));
         $this->assertTrue($schema->isValid('15.12'));
 
-        //$this->assertFalse($schema->isValid('40ddd'));
-        //$this->assertFalse($schema->isValid(''));
+        $this->assertFalse($schema->isValid('40ddd'));
+        $this->assertFalse($schema->isValid(''));
     }
 
     public function testRequired()
