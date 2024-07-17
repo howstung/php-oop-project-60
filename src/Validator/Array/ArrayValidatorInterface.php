@@ -11,4 +11,6 @@ interface ArrayValidatorInterface extends ValidatorInterface
     public function required(): self;
 
     public function sizeof(int $size): self;
+
+    public function shape(array $rules): self;
 }

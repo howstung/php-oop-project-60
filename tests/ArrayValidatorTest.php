@@ -63,4 +63,25 @@ class ArrayValidatorTest extends TestCase
         $check3 = $schema->isValid([1, 2]);
         $this->assertTrue($check3);
     }
+
+    public function testShape()
+    {
+        $schema = $this->schema;
+
+        // Позволяет описывать валидацию для ключей массива
+        $schema->shape([
+            'name' => $this->validator->string()->required(),
+            'age' => $this->validator->number()->positive(),
+        ]);
+
+        $check1 = $schema->isValid(['name' => 'kolya', 'age' => 100]); // true
+        $check2 = $schema->isValid(['name' => 'maya', 'age' => null]); // true
+        $check3 = $schema->isValid(['name' => '', 'age' => null]); // false
+        $check4 = $schema->isValid(['name' => 'ada', 'age' => -5]); // false
+
+        $this->assertTrue($check1);
+        $this->assertTrue($check2);
+        $this->assertFalse($check3);
+        $this->assertFalse($check4);
+    }
 }
