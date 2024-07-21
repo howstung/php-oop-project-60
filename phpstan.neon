@@ -1,0 +1,23 @@
+parameters:
+  level: 8
+  paths:
+    - .
+
+  checkMissingIterableValueType: false
+
+  excludePaths:
+    - vendor
+    - tests
+
+  reportUnmatchedIgnoredErrors: false
+
+  ignoreErrors:
+   - '#with no typehint specified#'
+   - '#Variable property access on object#'
+
+  phpstanFunctionalProgramming:
+    disallowThrow: false
+    disallowClasses: false
+    disallowLoops: false
+    disallowVariablesMutation: false
+    disallowUnusedExpression: false
